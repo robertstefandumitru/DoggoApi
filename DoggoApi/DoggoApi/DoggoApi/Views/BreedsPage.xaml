@@ -9,11 +9,29 @@
     <ContentPage.Content>
         
         <StackLayout>
-            
-            <Label Text="Breeds"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-            
+
+            <ListView x:Name="breedsListView"
+                      ItemsSource="{Binding Breeds}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      ItemSelected="BreedsListView_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <Grid>
+                                
+                                <Label Text="{Binding Name}" />
+                                
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                </ListView>
+
         </StackLayout>
         
     </ContentPage.Content>
