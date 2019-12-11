@@ -7,7 +7,7 @@
              x:Class="DoggoApi.Views.BreedsPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        
+
         <StackLayout>
 
             <ListView x:Name="breedsListView"
@@ -19,20 +19,30 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            
+
                             <Grid>
-                                
-                                <Label Text="{Binding Name}" />
-                                
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                       Text="{Binding Name}" />
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding SubBreedsCountText}"
+                                       IsVisible="{Binding HasSubBreeds}"/>
+
                             </Grid>
-                            
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
-                </ListView>
+
+            </ListView>
 
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>

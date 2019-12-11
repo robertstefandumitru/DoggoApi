@@ -1,4 +1,5 @@
-﻿using DoggoApi.ViewModels;
+﻿using DoggoApi.Models;
+using DoggoApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,24 @@ namespace DoggoApi.Views
             }
         }
 
-        private void BreedsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void BreedsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var selectedItem = e.SelectedItem as BreedModel;
+
+            if (selectedItem == null)
+            {
+                return;
+            }
+
+            if (selectedItem.HasSubBreeds)
+            {
+                await Navigation.PushAsync(new SubBreedsPage());
+            }
+            else
+            {
+                await Navigation.PushAsync(new ImageListPage());
+            }
+
             breedsListView.SelectedItem = null;
         }
     }

@@ -10,6 +10,8 @@ namespace DoggoApi.Models
 
         public List<SubBreedModel> SubBreeds { get; set; }
 
+        public string SubBreedsCountText { get => "Sub-breeds: " + SubBreeds?.Count; }
+
         public bool HasSubBreeds { get { return SubBreeds?.Count > 0; } }
     }
 }
