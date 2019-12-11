@@ -4,14 +4,17 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DoggoApi.MainPage">
+             x:Class="DoggoApi.Views.RandomPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
 
-    <Grid>
+        <StackLayout>
 
-        <Button Text="Test"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
+            <Label Text="Random"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
 
-    </Grid>
+        </StackLayout>
 
+    </ContentPage.Content>
 </ContentPage>
