@@ -16,7 +16,6 @@
             <Image Source="{Binding ImageUrl}"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
-                   BackgroundColor="Red"
                    Aspect="AspectFit"/>
 
         </StackLayout>

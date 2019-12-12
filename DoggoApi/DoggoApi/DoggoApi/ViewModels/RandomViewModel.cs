@@ -10,7 +10,18 @@ namespace DoggoApi.ViewModels
 {
     public class RandomViewModel : BaseViewModel
     {
-        public string ImageUrl { get { return ImageUrl; } set { ImageUrl = value; } }
+        private string imageUrl;
+        public string ImageUrl
+        {
+            get
+            {
+                return imageUrl;
+            }
+            set
+            {
+                SetProperty(ref imageUrl, value);
+            }
+        }
 
         public Command LoadImageCommand { get; set; }
 
