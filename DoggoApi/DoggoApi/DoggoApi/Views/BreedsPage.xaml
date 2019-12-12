@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:customcontrols="clr-namespace:DoggoApi.CustomControls"
              mc:Ignorable="d"
              x:Class="DoggoApi.Views.BreedsPage"
              Title="{Binding Title}">
@@ -10,9 +11,28 @@
 
         <StackLayout Padding="40, 20">
 
-            <Picker ItemsSource="{Binding ImagesAmounts}"
-                    SelectedItem="{Binding SelectedImagesAmount}"
-                    ItemDisplayBinding="{Binding .}" />
+            <Frame BackgroundColor="#08123C"
+                   HasShadow="False"
+                   HorizontalOptions="FillAndExpand"
+                   OutlineColor="#08123C"
+                   Padding="2"
+                   CornerRadius="3"
+                   Margin="5">
+
+                <Frame BackgroundColor="White"
+                       HasShadow="False"
+                       HorizontalOptions="FillAndExpand"
+                       Padding="20, 10"
+                       CornerRadius="3">
+
+                    <customcontrols:NoUnderlinePicker ItemsSource="{Binding ImagesAmounts}"
+                                                      SelectedItem="{Binding SelectedImagesAmount}"
+                                                      ItemDisplayBinding="{Binding .}"
+                                                      TextColor="#08123C" />
+
+                </Frame>
+
+            </Frame>
 
             <ListView x:Name="breedsListView"
                       ItemsSource="{Binding Breeds}"
@@ -26,13 +46,13 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                
+
                                 <Frame CornerRadius="3"
                                        IsClippedToBounds="True"
                                        HorizontalOptions="FillAndExpand"
                                        BackgroundColor="White"
                                        Margin="5">
-                                    
+
                                     <Grid>
 
                                         <Grid.ColumnDefinitions>
@@ -43,12 +63,12 @@
                                         <Label Grid.Column="0"
                                                Text="{Binding Name}"
                                                TextColor="#08123C"
-                                               FontSize="18"/>
+                                               FontSize="18" />
 
                                         <Label Grid.Column="1"
                                                Text="{Binding SubBreedsCountText}"
                                                IsVisible="{Binding HasSubBreeds}"
-                                               FontSize="16"/>
+                                               FontSize="16" />
 
                                     </Grid>
                                 </Frame>
