@@ -8,7 +8,8 @@ namespace DoggoApi.Models
     {
         Breeds,
         Breed,
-        Random
+        Random,
+        About
     }
 
     public class HomeMenuItem

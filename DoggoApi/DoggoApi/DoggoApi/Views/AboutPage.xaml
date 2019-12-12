@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoggoApi.Views.AboutPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="20">
+            
+            <Label Text="DoggoApi"
+                   TextColor="#08123C"
+                   FontAttributes="Bold"
+                   FontSize="30"
+                   HorizontalOptions="Center"/>
+            
+            <Label Text="Dumitru Robert-Stefan"
+                   TextColor="#08123C"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+            
+            <Label Text="Grupa 124 AIA"
+                   TextColor="#08123C"
+                   FontAttributes="Italic"
+                   FontSize="20" 
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

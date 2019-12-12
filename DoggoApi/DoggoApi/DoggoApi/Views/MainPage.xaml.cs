@@ -40,6 +40,9 @@ namespace DoggoApi.Views
                     case (int)MenuItemType.Random:
                         menuPages.Add(id, new NavigationPage(new RandomPage()));
                         break;
+                    case (int)MenuItemType.About:
+                        menuPages.Add(id, new NavigationPage(new AboutPage()));
+                        break;
                 }
             }
 
