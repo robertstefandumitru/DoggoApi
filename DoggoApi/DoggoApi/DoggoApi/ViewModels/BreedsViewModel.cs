@@ -45,7 +45,6 @@ namespace DoggoApi.ViewModels
             }
             catch (Exception ex)
             {
-                return;
             }
         }
     }

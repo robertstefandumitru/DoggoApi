@@ -44,11 +44,12 @@ namespace DoggoApi.Views
 
             if (selectedItem.HasSubBreeds)
             {
-                await Navigation.PushAsync(new SubBreedsPage());
+                await Navigation.PushAsync(new SubBreedsPage(new SubBreedsViewModel(selectedItem.Name, selectedItem.SubBreeds)));
+
             }
             else
             {
-                await Navigation.PushAsync(new ImageListPage());
+                await Navigation.PushAsync(new ImageListPage(new ImageListViewModel(selectedItem.Name)));
             }
 
             breedsListView.SelectedItem = null;

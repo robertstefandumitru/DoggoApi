@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DoggoApi.Models;
+using DoggoApi.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,27 @@ namespace DoggoApi.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SubBreedsPage : ContentPage
     {
-        public SubBreedsPage()
+        private SubBreedsViewModel viewModel;
+
+        public SubBreedsPage(SubBreedsViewModel subBreedsViewModel)
         {
             InitializeComponent();
+
+            BindingContext = viewModel = subBreedsViewModel;
+        }
+
+        private async void SubBreedsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem = e.SelectedItem as SubBreedModel;
+
+            if (selectedItem == null)
+            {
+                return;
+            }
+
+            await Navigation.PushAsync(new ImageListPage(new ImageListViewModel(viewModel.BreedName, selectedItem.Name)));
+
+            subBreedsListView.SelectedItem = null;
         }
     }
 }

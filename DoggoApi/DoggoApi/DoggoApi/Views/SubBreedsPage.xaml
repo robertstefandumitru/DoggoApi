@@ -7,9 +7,27 @@
              x:Class="DoggoApi.Views.SubBreedsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Lista subrase"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="subBreedsListView"
+                      ItemsSource="{Binding SubBreeds}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      ItemSelected="SubBreedsListView_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+
+                                <Label Text="{Binding Name}" />
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

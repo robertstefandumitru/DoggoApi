@@ -7,9 +7,27 @@
              x:Class="DoggoApi.Views.ImageListPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Lista imagini"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="imagesListView"
+                      ItemsSource="{Binding Images}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      ItemSelected="ImagesListView_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+
+                                <Label Text="{Binding Url}" />
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
