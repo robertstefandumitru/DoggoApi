@@ -14,6 +14,10 @@ namespace DoggoApi.ViewModels
     {
         public ObservableCollection<BreedModel> Breeds { get; set; }
 
+        public ObservableCollection<int> ImagesAmounts { get; set; }
+
+        public int SelectedImagesAmount { get; set; }
+
         public Command LoadBreedsCommand { get; set; }
 
         public BreedsViewModel()
@@ -21,6 +25,13 @@ namespace DoggoApi.ViewModels
             Title = "Breeds";
 
             Breeds = new ObservableCollection<BreedModel>();
+            ImagesAmounts = new ObservableCollection<int>();
+
+            ImagesAmounts.Add(5);
+            ImagesAmounts.Add(10);
+            ImagesAmounts.Add(20);
+
+            SelectedImagesAmount = 5;
 
             LoadBreedsCommand = new Command(async () => await ExecuteLoadBreedsCommand());
         }

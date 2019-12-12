@@ -32,7 +32,7 @@ namespace DoggoApi.Views
                 return;
             }
 
-            await Navigation.PushAsync(new ImageListPage(new ImageListViewModel(viewModel.BreedName, selectedItem.Name)));
+            await Navigation.PushAsync(new ImageListPage(new ImageListViewModel(viewModel.BreedName, selectedItem.Name, viewModel.ImagesAmount)));
 
             subBreedsListView.SelectedItem = null;
         }

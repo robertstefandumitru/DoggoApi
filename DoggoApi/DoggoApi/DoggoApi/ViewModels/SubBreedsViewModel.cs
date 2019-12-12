@@ -12,12 +12,15 @@ namespace DoggoApi.ViewModels
 
         public string BreedName { get; set; }
 
-        public SubBreedsViewModel(string breedName, List<SubBreedModel> subBreeds)
+        public int ImagesAmount { get; set; }
+
+        public SubBreedsViewModel(string breedName, List<SubBreedModel> subBreeds, int imagesAmout)
         {
             SubBreeds = new ObservableCollection<SubBreedModel>();
             subBreeds.ForEach(sb => SubBreeds.Add(sb));
 
             BreedName = breedName;
+            ImagesAmount = imagesAmout;
         }
     }
 }

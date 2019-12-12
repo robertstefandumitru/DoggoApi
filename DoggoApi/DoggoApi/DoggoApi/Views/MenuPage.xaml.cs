@@ -24,7 +24,6 @@ namespace DoggoApi.Views
             homeMenuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem { Id = MenuItemType.Breeds, Title = "Breeds"},
-                new HomeMenuItem { Id = MenuItemType.Breed, Title = "Breed"},
                 new HomeMenuItem { Id = MenuItemType.Random, Title = "Random"}
             };
 

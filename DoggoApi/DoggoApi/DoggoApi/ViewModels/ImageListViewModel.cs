@@ -14,17 +14,20 @@ namespace DoggoApi.ViewModels
     {
         public ObservableCollection<ImageModel> Images { get; set; }
 
+        public int ImagesAmount { get; set; }
+
         public Command LoadImagesCommand { get; set; }
 
         private string breedName;
         private string subBreedName;
 
-        public ImageListViewModel(string breedName, string subBreedName = null)
+        public ImageListViewModel(string breedName, string subBreedName, int imagesAmount)
         {
             this.breedName = breedName;
             this.subBreedName = subBreedName;
 
             Images = new ObservableCollection<ImageModel>();
+            ImagesAmount = imagesAmount;
 
             LoadImagesCommand = new Command(async () => await ExecuteLoadImagesCommand());
         }
@@ -37,11 +40,11 @@ namespace DoggoApi.ViewModels
 
                 if (subBreedName == null)
                 {
-                    result = await DoggoService.GetBreedImages(breedName);
+                    result = await DoggoService.GetBreedImages(breedName, ImagesAmount);
                 }
                 else
                 {
-                    result = await DoggoService.GetSubBreedImages(breedName, subBreedName);
+                    result = await DoggoService.GetSubBreedImages(breedName, subBreedName, ImagesAmount);
                 }
 
                 foreach (var imageUrl in result.Message)
