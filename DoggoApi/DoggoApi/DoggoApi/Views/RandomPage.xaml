@@ -8,10 +8,13 @@
              Title="{Binding Title}">
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout Padding="40, 20">
 
             <Button Text="Get random image!"
-                    Command="{Binding LoadImageCommand}" />
+                    Command="{Binding LoadImageCommand}"
+                    BackgroundColor="#08123C"
+                    TextColor="White"
+                    CornerRadius="3"/>
 
             <Image Source="{Binding ImageUrl}"
                    HorizontalOptions="FillAndExpand"
