@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace DoggoApi.ViewModels
 {
-    public class ImageListViewModel
+    public class ImageListViewModel : BaseViewModel
     {
         public ObservableCollection<ImageModel> Images { get; set; }
 

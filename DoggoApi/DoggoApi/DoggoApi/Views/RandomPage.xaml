@@ -10,9 +10,14 @@
 
         <StackLayout>
 
-            <Label Text="Random"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <Button Text="Get random image!"
+                    Command="{Binding LoadImageCommand}" />
+
+            <Image Source="{Binding ImageUrl}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   BackgroundColor="Red"
+                   Aspect="AspectFit"/>
 
         </StackLayout>
 

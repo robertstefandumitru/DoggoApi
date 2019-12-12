@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoggoApi.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace DoggoApi.Views
         public RandomPage()
         {
             InitializeComponent();
+
+            BindingContext = new RandomViewModel();
         }
     }
 }

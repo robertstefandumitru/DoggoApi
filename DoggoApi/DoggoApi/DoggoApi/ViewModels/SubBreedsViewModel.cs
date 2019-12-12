@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DoggoApi.ViewModels
 {
-    public class SubBreedsViewModel
+    public class SubBreedsViewModel : BaseViewModel
     {
         public ObservableCollection<SubBreedModel> SubBreeds { get; set; }
 
