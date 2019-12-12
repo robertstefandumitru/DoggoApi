@@ -19,7 +19,10 @@
 
                             <Grid>
 
-                                <Label Text="{Binding Url}" />
+                                <Image Source="{Binding Url}"
+                                       HorizontalOptions="FillAndExpand"
+                                       HeightRequest="200"
+                                       Aspect="AspectFit"/>
 
                             </Grid>
 
