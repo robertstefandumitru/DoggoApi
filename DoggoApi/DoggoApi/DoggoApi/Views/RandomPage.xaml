@@ -8,16 +8,17 @@
              Title="{Binding Title}">
     <ContentPage.Content>
 
-        <StackLayout Padding="40, 20">
+        <StackLayout Padding="40, 20"
+                     BackgroundColor="WhiteSmoke">
 
             <Button Text="Get random image!"
                     Command="{Binding LoadImageCommand}"
                     BackgroundColor="#08123C"
                     TextColor="White"
                     CornerRadius="3" />
-            
+
             <StackLayout VerticalOptions="CenterAndExpand">
-                
+
                 <Frame CornerRadius="5"
                        IsClippedToBounds="True"
                        Padding="0"
@@ -31,7 +32,7 @@
                            Aspect="AspectFit" />
 
                 </Frame>
-                
+
             </StackLayout>
 
         </StackLayout>
