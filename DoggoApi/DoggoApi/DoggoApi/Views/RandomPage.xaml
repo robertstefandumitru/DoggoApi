@@ -14,12 +14,25 @@
                     Command="{Binding LoadImageCommand}"
                     BackgroundColor="#08123C"
                     TextColor="White"
-                    CornerRadius="3"/>
+                    CornerRadius="3" />
+            
+            <StackLayout VerticalOptions="CenterAndExpand">
+                
+                <Frame CornerRadius="5"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       HasShadow="True">
 
-            <Image Source="{Binding ImageUrl}"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Aspect="AspectFit"/>
+                    <Image Source="{Binding ImageUrl}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Aspect="AspectFit" />
+
+                </Frame>
+                
+            </StackLayout>
 
         </StackLayout>
 
