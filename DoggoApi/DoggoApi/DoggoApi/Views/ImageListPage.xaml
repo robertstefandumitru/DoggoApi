@@ -11,20 +11,32 @@
                       ItemsSource="{Binding Images}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
-                      ItemSelected="ImagesListView_ItemSelected">
+                      ItemSelected="ImagesListView_ItemSelected"
+                      SeparatorVisibility="None"
+                      BackgroundColor="WhiteSmoke">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
 
-                            <Grid>
+                            <StackLayout HorizontalOptions="CenterAndExpand"
+                                         Padding="10">
 
-                                <Image Source="{Binding Url}"
-                                       HorizontalOptions="FillAndExpand"
-                                       HeightRequest="200"
-                                       Aspect="AspectFit"/>
+                                <Frame CornerRadius="5"
+                                       IsClippedToBounds="True"
+                                       Padding="0"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       HasShadow="True">
 
-                            </Grid>
+                                    <Image Source="{Binding ImageUrl}"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           Aspect="AspectFit" />
+
+                                </Frame>
+
+                            </StackLayout>
 
                         </ViewCell>
                     </DataTemplate>

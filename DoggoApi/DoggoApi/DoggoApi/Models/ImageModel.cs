@@ -6,6 +6,6 @@ namespace DoggoApi.Models
 {
     public class ImageModel
     {
-        public string Url { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

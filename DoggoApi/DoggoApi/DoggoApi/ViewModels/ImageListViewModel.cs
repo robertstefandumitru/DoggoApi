@@ -49,7 +49,7 @@ namespace DoggoApi.ViewModels
 
                 foreach (var imageUrl in result.Message)
                 {
-                    Images.Add(new ImageModel { Url = imageUrl });
+                    Images.Add(new ImageModel { ImageUrl = imageUrl });
                 }
             }
             catch (Exception ex)
