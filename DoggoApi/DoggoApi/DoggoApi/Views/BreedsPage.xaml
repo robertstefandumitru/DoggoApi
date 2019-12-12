@@ -8,36 +8,50 @@
              Title="{Binding Title}">
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout Padding="40, 20">
 
             <Picker ItemsSource="{Binding ImagesAmounts}"
                     SelectedItem="{Binding SelectedImagesAmount}"
-                    ItemDisplayBinding="{Binding .}"/>
+                    ItemDisplayBinding="{Binding .}" />
 
             <ListView x:Name="breedsListView"
                       ItemsSource="{Binding Breeds}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
-                      ItemSelected="BreedsListView_ItemSelected">
+                      ItemSelected="BreedsListView_ItemSelected"
+                      BackgroundColor="WhiteSmoke"
+                      SeparatorVisibility="None">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-
                             <Grid>
+                                
+                                <Frame CornerRadius="3"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="White"
+                                       Margin="5">
+                                    
+                                    <Grid>
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="auto" />
-                                </Grid.ColumnDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
 
-                                <Label Grid.Column="0"
-                                       Text="{Binding Name}" />
+                                        <Label Grid.Column="0"
+                                               Text="{Binding Name}"
+                                               TextColor="#08123C"
+                                               FontSize="18"/>
 
-                                <Label Grid.Column="1"
-                                       Text="{Binding SubBreedsCountText}"
-                                       IsVisible="{Binding HasSubBreeds}"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding SubBreedsCountText}"
+                                               IsVisible="{Binding HasSubBreeds}"
+                                               FontSize="16"/>
 
+                                    </Grid>
+                                </Frame>
                             </Grid>
 
                         </ViewCell>

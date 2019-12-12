@@ -6,21 +6,36 @@
              mc:Ignorable="d"
              x:Class="DoggoApi.Views.SubBreedsPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="40, 20">
+            
             <ListView x:Name="subBreedsListView"
                       ItemsSource="{Binding SubBreeds}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
-                      ItemSelected="SubBreedsListView_ItemSelected">
+                      ItemSelected="SubBreedsListView_ItemSelected"
+                      BackgroundColor="WhiteSmoke"
+                      SeparatorVisibility="None">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
 
                             <Grid>
+                                
+                                <Frame CornerRadius="3"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="White"
+                                       Margin="5">
+                                    
+                                    <Grid>
 
-                                <Label Text="{Binding Name}" />
+                                        <Label Text="{Binding Name}"
+                                               TextColor="#08123C"
+                                               FontSize="18" />
 
+                                    </Grid>
+                                </Frame>
                             </Grid>
 
                         </ViewCell>
@@ -28,6 +43,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
