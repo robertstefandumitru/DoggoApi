@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DoggoApi.Views.SubBreedsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="40, 20">
+            
+            <ListView x:Name="subBreedsListView"
+                      ItemsSource="{Binding SubBreeds}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      ItemSelected="SubBreedsListView_ItemSelected"
+                      BackgroundColor="WhiteSmoke"
+                      SeparatorVisibility="None">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                
+                                <Frame CornerRadius="3"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="White"
+                                       Margin="5">
+                                    
+                                    <Grid>
+
+                                        <Label Text="{Binding Name}"
+                                               TextColor="#08123C"
+                                               FontSize="18" />
+
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
